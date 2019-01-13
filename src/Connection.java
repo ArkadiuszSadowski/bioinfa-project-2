@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Connection {
@@ -22,7 +23,7 @@ public class Connection {
     }
 
     public void addCoveredVertexs(Vertex Vertex) {
-        mergedList.Add(Vertex);
+        mergedList.add(Vertex);
     }
 
     public int getSumCoverage() {
