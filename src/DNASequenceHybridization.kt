@@ -27,12 +27,13 @@ class DNASequenceHybridization {
             }
 
             if (errorCounter > 3) {
-                System.out.println("Error")
+                System.out.println("Liczba błędów użytkownika większa niż 3. Uruchom program ponownie!")
                 return
             }
         }
 
-        val superString = SuperStringUtil.createSpectrum(listOfSequence.toSet())
+        val shortestSuperStringUtil = ShortestSuperStringUtil()
+        val superString = shortestSuperStringUtil.createSuperString(listOfSequence)
         System.out.println("Spectrum to : $superString")
 
     }
