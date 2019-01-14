@@ -3,37 +3,37 @@ import java.util.Set;
 
 final class SuperStringUtil {
 
-    static String createSuperString(Set<String> subStrings) {
+    static String createSpectrum(Set<String> subStrings) {
         int totalStrings = subStrings.size();
         String[] match = new String[totalStrings];
         int i = 0;
 
         for (String superString : subStrings) {
             Set<String> temp = new HashSet<>(subStrings);
-            String maxSuperString = superString;
+            String maxSpectrum = superString;
             while (temp.size() > 1) {
 
                 String subString = "";
-                String nextMaxSuperString = maxSuperString;
+                String nextMaxSuperString = maxSpectrum;
 
                 for (String nextString : temp) {
 
                     if (!nextString.equals(nextMaxSuperString)) {
-                        String superTemp = getSuperString(maxSuperString, nextString);
-                        if (nextMaxSuperString.equals(maxSuperString) || nextMaxSuperString.length() > superTemp.length()) {
+                        String superTemp = getSpectrum(maxSpectrum, nextString);
+                        if (nextMaxSuperString.equals(maxSpectrum) || nextMaxSuperString.length() > superTemp.length()) {
                             nextMaxSuperString = superTemp;
                             subString = nextString;
                         }
                     }
                 }
 
-                temp.remove(maxSuperString);
+                temp.remove(maxSpectrum);
                 temp.remove(subString);
-                maxSuperString = nextMaxSuperString;
-                temp.add(maxSuperString);
+                maxSpectrum = nextMaxSuperString;
+                temp.add(maxSpectrum);
             }
 
-            match[i] = maxSuperString;
+            match[i] = maxSpectrum;
             System.out.println(match[i]);
             i++;
         }
@@ -49,12 +49,12 @@ final class SuperStringUtil {
         return bestAns;
     }
 
-    private static String getSuperString(String superString, String someString) {
-        String result = superString;
+    private static String getSpectrum(String spectrum, String someString) {
+        String result = spectrum;
 
         int endIndex = someString.length() - 1;
 
-        while (endIndex > 0 && !superString.endsWith(someString.substring(0, endIndex))) {
+        while (endIndex > 0 && !spectrum.endsWith(someString.substring(0, endIndex))) {
             endIndex--;
         }
 

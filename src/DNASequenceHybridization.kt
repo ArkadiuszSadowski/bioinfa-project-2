@@ -10,7 +10,7 @@ class DNASequenceHybridization {
         PermutationCreator.printAllKLength(k)
         val permutationsList = PermutationCreator.possibleNucleotyde
 
-        System.out.println("Podaj ilość substringów o długości k :")
+        System.out.println("Podaj liczbę słów o długości k :")
         val n: Int = scanner.nextInt()
 
         var errorCounter = 0
@@ -32,8 +32,8 @@ class DNASequenceHybridization {
             }
         }
 
-        val superString = SuperStringUtil.createSuperString(listOfSequence.toSet())
-        System.out.println("Najlepszy SuperString to : $superString")
+        val superString = SuperStringUtil.createSpectrum(listOfSequence.toSet())
+        System.out.println("Spectrum to : $superString")
 
     }
 }
