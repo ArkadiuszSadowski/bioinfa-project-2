@@ -14,7 +14,7 @@ class DNASequenceHybridization {
         val n: Int = scanner.nextInt()
 
         var errorCounter = 0
-        val listOfSequence = mutableListOf<String>()
+        val listOfSequences = mutableListOf<String>()
 
         for (i in 0..n) {
             val sequence= scanner.nextLine().trim()
@@ -22,8 +22,8 @@ class DNASequenceHybridization {
             when {
                 sequence.length != k -> errorCounter++
                 permutationsList.contains(sequence).not() -> errorCounter++
-                listOfSequence.contains(sequence) -> errorCounter++
-                else -> listOfSequence.add(sequence)
+                listOfSequences.contains(sequence) -> errorCounter++
+                else -> listOfSequences.add(sequence)
             }
 
             if (errorCounter > 3) {
@@ -33,7 +33,7 @@ class DNASequenceHybridization {
         }
 
         val shortestSuperStringUtil = ShortestSuperStringUtil()
-        val superString = shortestSuperStringUtil.createSuperString(listOfSequence)
+        val superString = shortestSuperStringUtil.createSuperString(listOfSequences)
         System.out.println("Spectrum to : $superString")
 
     }
