@@ -4,4 +4,5 @@ public class Application {
         DNASequenceHybridization dnaSequenceHybridization = new DNASequenceHybridization();
         dnaSequenceHybridization.start();
     }
+
 }
